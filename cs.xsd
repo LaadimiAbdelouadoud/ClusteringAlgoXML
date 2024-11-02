@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="ProjetAlgorithmesDeClustering">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="IntroductionCA" type="IntroductionCAType" />
+                <xs:element name="Sommaire" type="SommaireType" />
+                <xs:element name="PresentationCA" type="PresentationCAType" />
+                <xs:element name="TypesCA" type="TypesCAType" />
+                <xs:element name="ApplicationCA" type="ApplicationCAType" />
+                <xs:element name="AlgorithmeDetailleCA" type="AlgorithmeDetailleCAType" />
+                <xs:element name="MetricsCA" type="MetricsCAType" />
+                <xs:element name="DefisLimitationsCA" type="DefisLimitationsCAType" />
+                <xs:element name="AvanceesTendancesCA" type="AvanceesTendancesCAType" />
+                <xs:element name="ConclusionCA" type="ConclusionCAType" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Definition for IntroductionCA -->
+    <xs:complexType name="IntroductionCAType">
+        <xs:sequence>
+            <xs:element name="intro" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for Sommaire -->
+    <xs:complexType name="SommaireType">
+        <xs:sequence>
+            <xs:element name="section" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="titre" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition for PresentationCA -->
+    <xs:complexType name="PresentationCAType">
+        <xs:sequence>
+            <xs:element name="definition" type="xs:string" />
+            <xs:element name="utilisationsCA">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="utilisation" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="nom" type="xs:string" use="required" />
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for TypesCA -->
+    <xs:complexType name="TypesCAType">
+        <xs:sequence>
+            <xs:element name="type" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="definition_type" type="xs:string" />
+                        <xs:element name="avantages" type="xs:string" />
+                        <xs:element name="limitations" type="xs:string" />
+                    </xs:sequence>
+                    <xs:attribute name="nom" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for ApplicationCA -->
+    <xs:complexType name="ApplicationCAType">
+        <xs:sequence>
+            <xs:element name="application" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="description_application" type="xs:string" />
+                    </xs:sequence>
+                    <xs:attribute name="nom" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for AlgorithmeDetailleCA -->
+    <xs:complexType name="AlgorithmeDetailleCAType">
+        <xs:sequence>
+            <xs:element name="algorithmeNom" type="xs:string" />
+            <xs:element name="algorithmeDescription" type="xs:string" />
+            <xs:element name="etapes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="etape" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="numero" type="xs:string" use="required" />
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="avantages" type="xs:string" />
+            <xs:element name="limitations" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for MetricsCA -->
+    <xs:complexType name="MetricsCAType">
+        <xs:sequence>
+            <xs:element name="metric" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="description_metric" type="xs:string" />
+                    </xs:sequence>
+                    <xs:attribute name="nom" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for DefisLimitationsCA -->
+    <xs:complexType name="DefisLimitationsCAType">
+        <xs:sequence>
+            <xs:element name="defi" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="description_defi" type="xs:string" />
+                    </xs:sequence>
+                    <xs:attribute name="nom" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for AvanceesTendancesCA -->
+    <xs:complexType name="AvanceesTendancesCAType">
+        <xs:sequence>
+            <xs:element name="avancee" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="description_avancee" type="xs:string" />
+                    </xs:sequence>
+                    <xs:attribute name="nom" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <!-- Definition for ConclusionCA -->
+    <xs:complexType name="ConclusionCAType">
+        <xs:sequence>
+            <xs:element name="conclusion" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="nom" type="xs:string" use="required" />
+    </xs:complexType>
+
+</xs:schema>

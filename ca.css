@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4ff;
+    margin: 0;
+    padding: 0;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide {
+    width: 80%;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 30px;
+    text-align: left;
+}
+
+.slide h1 {
+    color: #7270f5; /* Utilisation de la couleur principale */
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.slide h2 {
+    color: #7270f5; /* Accentuation pour les sous-titres */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.slide p, .slide li {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+.application, .type, .metric, .defi, .avancee {
+    margin-top: 15px;
+    padding: 15px; 
+    border-radius: 5px;
+    background-color: #f2f2fd;
+}
+
+.application h2, .type h2, .metric h2, .defi h2, .avancee h2 {
+    color: #7270f5; /* Accentuation des titres des sections */
+}
+
+.slide img {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+}

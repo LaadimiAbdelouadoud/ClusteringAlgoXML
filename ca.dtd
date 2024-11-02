@@ -1,0 +1,62 @@
+<!ELEMENT ProjetAlgorithmesDeClustering (IntroductionCA, Sommaire, PresentationCA, TypesCA, ApplicationCA, AlgorithmeDetailleCA, MetricsCA, DefisLimitationsCA, AvanceesTendancesCA, ConclusionCA)>
+
+<!ELEMENT IntroductionCA (intro)>
+<!ATTLIST IntroductionCA nom CDATA #REQUIRED>
+<!ELEMENT intro (#PCDATA)>
+
+<!ELEMENT Sommaire (section*)>
+<!ELEMENT section EMPTY>
+<!ATTLIST section titre CDATA #REQUIRED>
+
+<!ELEMENT PresentationCA (definition, utilisationsCA)>
+<!ATTLIST PresentationCA nom CDATA #REQUIRED>
+<!ELEMENT definition (#PCDATA)>
+<!ELEMENT utilisationsCA (utilisation*)>
+<!ELEMENT utilisation (#PCDATA)>
+<!ATTLIST utilisation nom CDATA #REQUIRED>
+
+<!ELEMENT TypesCA (type*)>
+<!ATTLIST TypesCA nom CDATA #REQUIRED>
+<!ELEMENT type (definition_type, avantages, limitations)>
+<!ATTLIST type nom CDATA #REQUIRED>
+<!ELEMENT definition_type (#PCDATA)>
+
+
+<!ELEMENT ApplicationCA (application*)>
+<!ATTLIST ApplicationCA nom CDATA #REQUIRED>
+<!ELEMENT application (description_application)>
+<!ATTLIST application nom CDATA #REQUIRED>
+<!ELEMENT description_application (#PCDATA)>
+
+<!ELEMENT AlgorithmeDetailleCA (algorithmeNom, algorithmeDescription, etapes, avantages, limitations)>
+<!ATTLIST AlgorithmeDetailleCA nom CDATA #REQUIRED>
+<!ELEMENT algorithmeNom (#PCDATA)>
+<!ELEMENT algorithmeDescription (#PCDATA)>
+<!ELEMENT etapes (etape*)>
+<!ELEMENT etape (#PCDATA)>
+<!ATTLIST etape numero CDATA #REQUIRED>
+<!ELEMENT avantages (#PCDATA)>
+<!ELEMENT limitations (#PCDATA)>
+
+
+<!ELEMENT MetricsCA (metric*)>
+<!ATTLIST MetricsCA nom CDATA #REQUIRED>
+<!ELEMENT metric (description_metric)>
+<!ATTLIST metric nom CDATA #REQUIRED>
+<!ELEMENT description_metric (#PCDATA)>
+
+<!ELEMENT DefisLimitationsCA (defi*)>
+<!ATTLIST DefisLimitationsCA nom CDATA #REQUIRED>
+<!ELEMENT defi (description_defi)>
+<!ATTLIST defi nom CDATA #REQUIRED>
+<!ELEMENT description_defi (#PCDATA)>
+
+<!ELEMENT AvanceesTendancesCA (avancee*)>
+<!ATTLIST AvanceesTendancesCA nom CDATA #REQUIRED>
+<!ELEMENT avancee (description_avancee)>
+<!ATTLIST avancee nom CDATA #REQUIRED>
+<!ELEMENT description_avancee (#PCDATA)>
+
+<!ELEMENT ConclusionCA (conclusion)>
+<!ATTLIST ConclusionCA nom CDATA #REQUIRED>
+<!ELEMENT conclusion (#PCDATA)>
